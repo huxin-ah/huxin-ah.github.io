@@ -1,8 +1,39 @@
-<html>
-  <head>
-    <title>这是我的标题</title>
-  </head>
-  <body>
-    这是我的网页
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仿土豆网显示遮罩案例</title>
+    <style>
+        .tudou {
+            position: relative;
+            width: 444px;
+            height: 320px;
+            background-color: pink;
+            margin: 30px auto;
+        }
+        .mask {
+            /* 隐藏遮罩层 */
+            display: none;
+            
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* 要是加播放图片应该在background后加url(图片的地址) */
+            background:rgba(0,0,0, .3);
+        }
+        /* 当我们鼠标经过土豆这个盒子，就让遮罩层显示出来 */
+        .tudou:hover .mask {
+            /* 此时display:block不是转换成块元素，而是显示遮罩层 */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="tudou">
+        <div class="mask"></div>
+    </div>
+</body>
 </html>
